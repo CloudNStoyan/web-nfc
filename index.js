@@ -14,6 +14,7 @@ const updateScansUI = () => {
     const writeButton = document.createElement("button");
     writeButton.addEventListener("click", async () => {
       try {
+        console.log("Trying to write: " + scan.serialNumber);
         const ndef = new NDEFReader();
         await ndef.write(scan.serialNumber);
         alert("Message written");
